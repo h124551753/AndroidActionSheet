@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         ActionSheet actionSheet = new ActionSheet.Builder()
                 .setTitle("Title", Color.BLUE)
                 //.setTitleTextSize(20)
-                .setOtherBtn(new String[]{"Btn0", "Btn1", "Btn2"}, new int[]{Color.GREEN, Color.BLACK, Color.GREEN})
+                .setOtherBtn(new String[]{"Btn0", "Btn1", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2", "Btn2"}, new int[]{Color.GREEN, Color.BLACK, Color.GREEN})
                 //.setOtherBtnTextSize(30)
                 .setOtherBtnSub(new String[]{null, "Btn1 sub", ""}, new int[]{Color.BLACK, Color.BLUE, Color.GREEN})
                 //.setOtherBtnSubTextSize(20)

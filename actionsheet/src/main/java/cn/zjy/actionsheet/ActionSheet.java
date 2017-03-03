@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
@@ -114,10 +115,12 @@ public class ActionSheet extends DialogFragment implements View.OnClickListener 
         getDialog().setCanceledOnTouchOutside(args.getBoolean(CANCELABLE_ON_TOUCH_OUTSIDE, true));
 
         Context context = getActivity();
+        ScrollView scrollView = new ScrollView(context);
         LinearLayout layout = new LinearLayout(context);
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT);
         int padding = (int) context.getResources().getDimension(R.dimen.action_sheet_padding);
+        scrollView.setLayoutParams(lp);
         layout.setLayoutParams(lp);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -126,8 +129,9 @@ public class ActionSheet extends DialogFragment implements View.OnClickListener 
         addTitle(layout);
         addOtherBtns(layout);
         addCancelBtn(layout);
+        scrollView.addView(layout);
 
-        return layout;
+        return scrollView;
     }
 
     private void addTitle(LinearLayout layout) {
